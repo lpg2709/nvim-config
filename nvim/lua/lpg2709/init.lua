@@ -1,0 +1,5 @@
+require('lpg2709.lualine')
+-- require('jakewies.lsp')
+require('lpg2709.telescope')
+require('lpg2709.treesitter')
+-- require('jakewies.nvim-tree')
