@@ -1,6 +1,6 @@
 require('lualine').setup {
     options = {
-        disabled_filetypes = {'NERDTree'},
+        disabled_filetypes = {'NvimTree'},
 		theme = 'gruvbox_dark'
     }
 }

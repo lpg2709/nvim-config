@@ -43,7 +43,8 @@ Plug 'luochen1990/rainbow'                           " showing diff level of
 Plug 'jiangmiao/auto-pairs'                          " Insert or delete brackets
                                                      "   parens, quotes in pair.
 Plug 'editorconfig/editorconfig-vim'                 " Editorsconfig plugint
-Plug 'scrooloose/nerdtree'                           " File tree
+" Plug 'scrooloose/nerdtree'                           " File tree
+Plug 'kyazdani42/nvim-tree.lua'                      " File explorer
 
 " - Neovim
 Plug 'nvim-lualine/lualine.nvim'
@@ -52,6 +53,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+Plug 'neovim/nvim-lspconfig'
 
 call plug#end()                                      " Fim da chamada
 
@@ -72,7 +74,7 @@ set background=dark
 hi Normal guibg=NONE ctermbg=NONE
 
 " ---  Keys remaps
-map <silent> <C-b> :NERDTreeToggle<CR>
+" map <silent> <C-b> :NERDTreeToggle<CR>
 
 " move para o buffer da esquerda
 map <silent> <C-h> :wincmd h<CR>
