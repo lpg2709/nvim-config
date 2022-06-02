@@ -24,6 +24,7 @@ set pastetoggle=<F2>                                 " F2 toggle paste mode
 set updatetime=300
 set shortmess+=c
 set guicursor=i:block                                " Cursor block
+set nohlsearch
 
 command! Xs :mks! | :xa                              " Save the session,
                                                      "   modified files and exit
