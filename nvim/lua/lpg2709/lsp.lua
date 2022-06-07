@@ -49,6 +49,7 @@ cmp.setup({
     { name = 'luasnip' }, -- For luasnip users.
   }, {
     { name = 'buffer' },
+    { name = 'path' },
   })
 })
 
