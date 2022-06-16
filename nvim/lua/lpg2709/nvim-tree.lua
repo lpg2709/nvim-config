@@ -7,7 +7,7 @@ require('nvim-tree').setup {
     }
 }
 
-vim.api.nvim_set_keymap('n', '<C-b>', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>b', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
 
 -- This highlight override is based on the tokyonight
 -- theme. Changing the theme will cause NvimTreeEndOfBuffer to break

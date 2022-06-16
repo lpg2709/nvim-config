@@ -25,6 +25,7 @@ set updatetime=300
 set shortmess+=c
 set guicursor=i:block                                " Cursor block
 set nohlsearch
+let mapleader = " "
 
 command! Xs :mks! | :xa                              " Save the session,
                                                      "   modified files and exit
@@ -44,7 +45,6 @@ Plug 'luochen1990/rainbow'                           " showing diff level of
 Plug 'jiangmiao/auto-pairs'                          " Insert or delete brackets
                                                      "   parens, quotes in pair.
 Plug 'editorconfig/editorconfig-vim'                 " Editorsconfig plugint
-" Plug 'scrooloose/nerdtree'                           " File tree
 Plug 'kyazdani42/nvim-tree.lua'                      " File explorer
 
 " - Neovim
@@ -54,6 +54,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'  }
 Plug 'neovim/nvim-lspconfig'
 
 Plug 'hrsh7th/cmp-nvim-lsp'
@@ -63,7 +64,7 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
-Plug 'williamboman/nvim-lsp-installer'
+" Plug 'williamboman/nvim-lsp-installer'
 
 call plug#end()                                      " Fim da chamada
 
@@ -86,13 +87,17 @@ hi Normal guibg=NONE ctermbg=NONE
 
 " ---  Keys remaps
 " map <silent> <C-b> :NERDTreeToggle<CR>
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " move para o buffer da esquerda
 map <silent> <C-h> :wincmd h<CR>
 " move para o buffer da direita
 map <silent> <C-l> :wincmd l<CR>
 " Ctrl-k duas vezes, ativa e desativa linha relativa ao cursor
-nmap <silent> <C-k><C-k> :set invrelativenumber <CR>
+nnoremap <silent> <leader>k <cmd>:set invrelativenumber <CR>
 
 " Comment Box
 nnoremap <leader>* I*<Space><Esc>A<Space>*<ESC>I<ESC><C-V>$U<Esc>yy2P<C-V>
